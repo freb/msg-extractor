@@ -402,7 +402,7 @@ class Message(OleFile.OleFileIO):
             f.write("Date: " + xstr(self.date) + "\n")
             f.write("-----------------\n\n")
 
-            f.write(self.body)
+            f.write(self.body.encode('utf-8'))
             f.close()
 
             # Save the attachments
