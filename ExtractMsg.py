@@ -34,7 +34,10 @@ import glob
 import traceback
 from email.parser import Parser as EmailParser
 import email.utils
-import OleFileIO_PL as OleFile
+try:
+    import OleFileIO_PL as OleFile
+except ImportError as e:
+    raise ImportError('%s (use "pip install olefile")' % e)
 
 # This property information was sourced from
 # http://www.fileformat.info/format/outlookmsg/index.htm
